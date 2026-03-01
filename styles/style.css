@@ -145,10 +145,6 @@
   border-color: var(--accent-color);
 }
 
-.card__icon-button:focus-visible {
-  border-color: var(--accent-color);
-}
-
 .like-icon {
   display: block;
   transform-origin: center;
@@ -300,9 +296,6 @@
 
 .img__cognition {
   filter: brightness(110%);
-}
-
-.button__save {
 }
 
 .button__block {
