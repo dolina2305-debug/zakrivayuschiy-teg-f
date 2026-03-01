@@ -1,1 +1,1 @@
-https://github.com/dolina2305-debug/zakrivayuschiy-teg-f
+https://dolina2305-debug.github.io/zakrivayuschiy-teg-f/
