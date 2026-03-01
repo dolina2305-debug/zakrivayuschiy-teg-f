@@ -13,4 +13,369 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-variable-Inter), sans-serif;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-attachment: fixed;
+  font-variation-settings:
+    "wght" var(--main-text-card),
+    400;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  padding-block: clamp(7.5rem, 6.9231rem + 2.4615vw, 8rem);
+  padding-inline: clamp(0.875rem, -6.7692rem + 32.6154vw, 7.5rem);
+  margin: 100px auto;
+}
+
+.block__width {
+  width: var(--block-width);
+}
+
+.header__title {
+  text-transform: uppercase;
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  font-family: var(--font-PressStart2p), fantasy;
+}
+
+.header__text {
+  font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
+  font-family: var(--font-PressStart2p), fantasy;
+  text-transform: uppercase;
+}
+
+.card__list {
+  display: grid;
+  gap: 50px;
+  margin: 0 auto;
+}
+
+.card {
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+}
+
+.card__title {
+  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  font-family: var(--font-variable-Inter), sans-serif;
+  font-variation-settings:
+    "wght" var(--main-title-card),
+    700;
+  color: var(--accent-color);
+  padding: 4px 10px;
+}
+
+.card__image {
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  position: relative;
+  display: flex;
+}
+
+.image {
+  width: clamp(23.1875rem, -0.25rem + 100vw, 43.5rem);
+  height: clamp(23.1875rem, -0.25rem + 100vw, 43.5rem);
+}
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-family: var(--font-PressStart2p), fantasy;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  text-shadow:
+    -1px 0 var(--text-shadow),
+    0 1px var(--text-shadow),
+    1px 0 var(--text-shadow),
+    0 -1px var(--text-shadow);
+}
+
+@supports ((-webkit-text-stroke: 1px var(--text-shadow))) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--text-shadow);
+    text-shadow: none;
+  }
+}
+
+.card__text-block {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  flex-direction: column;
+}
+
+.card__text {
+  font-variation-settings:
+    "wght" var(--main-text-card),
+    400;
+  font-size: 18px;
+  line-height: 117%;
+  font-family: var(--font-variable-Inter), sans-serif;
+  color: var(--accent-color);
+}
+
+.card__button {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  margin-bottom: 25px;
+  margin-right: 25px;
+}
+
+.card__icon-button {
+  border: 2px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border 0.3s ease;
+  outline: none;
+  padding: 0px;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
+}
+
+.like-icon {
+  display: block;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .heart {
+  animation: scaleHeart 0.3s ease-in 0.1s;
+  transform-origin: center;
+}
+
+.contour {
+  transition: fill 0.1s linear 0s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.6s;
+}
+
+.main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
+}
+
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--accent-color);
+  transition-delay: 0s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition-delay: 0s;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparkle 0.3s ease-in 0.3s;
+}
+
+.button {
+  background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+  position: relative;
+  font-family: var(--font-PressStart2p), fantasy;
+  font-size: 14px;
+  line-height: 90%;
+  color: var(--accent-color);
+  font-weight: 400;
+  transition: box-shadow 0.3s ease;
+  outline: none;
+  padding: 9px 17px;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: 0.5s ease-in-out;
+  z-index: 0;
+  inset: 0;
+  transform-origin: left;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button span {
+  position: relative;
+  mix-blend-mode: difference;
+  color: var(--hover-color);
+  z-index: 1;
+}
+
+.button .floppy {
+  position: relative;
+  mix-blend-mode: difference;
+  color: var(--hover-color);
+  z-index: 1;
+}
+
+.card__like-button {
+  min-width: 130px;
+}
+
+.button__text {
+  display: block;
+}
+
+.img__interest {
+  filter: sepia(20%);
+}
+
+.img__forest {
+  filter: saturate(200%);
+}
+
+.img__way {
+  filter: brightness(105%) contrast(120%) saturate(120%);
+}
+
+.img__perfectionism {
+  filter: saturate(150%) contrast(110%);
+}
+
+.img__help {
+  filter: hue-rotate(15deg);
+}
+
+.img__nerves {
+  filter: hue-rotate(-25deg);
+}
+
+.img__speed {
+  filter: contrast(120%);
+}
+
+.img__cognition {
+  filter: brightness(110%);
+}
+
+.button__save {
+}
+
+.button__block {
+  display: flex;
+  justify-content: center;
+}
+
+.button__save-memory {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 18px;
+}
+
+.floppy {
+  width: 28px;
+}
+
+.dialog {
+  width: 341px;
+  padding: 30px 40px;
+}
+
+.dialog::backdrop {
+  backdrop-filter: blur(6px);
+}
+
+.dialog__content {
+  display: grid;
+  gap: 30px;
+}
+
+.dialog__content-floppy {
+  display: flex;
+  gap: 19px;
+  align-items: center;
+}
+
+.floppy-big {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+}
+
+.dialog__content-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  font-family: var(--font-PressStart2p), fantasy;
+}
+
+.close__button {
+  padding: 9px 17px;
+}
+
+.text-ok {
+  text-transform: uppercase;
+}
+
+@media (width > 375px) {
+  .floppy {
+    width: 21px;
+  }
+
+  .button__save-memory {
+    flex-direction: row;
+  }
+
+  .dialog {
+    width: 353px;
+  }
 }
